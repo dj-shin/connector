@@ -54,7 +54,7 @@ class IRCConnector(threading.Thread):
             ircmsg = self.ircsock.recv(8192)
             try:
                 ircmsg = ircmsg.decode().strip('\n\r')
-            except e:
+            except Exception as e:
                 print(e)
             else:
                 print(ircmsg)
