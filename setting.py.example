@@ -4,3 +4,4 @@ server = 'irc.example.com'
 port = 6697
 botname = 'botname'
 botnick = 'botnick'
+DEBUG = False
