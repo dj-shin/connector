@@ -4,7 +4,7 @@ import socket
 import ssl
 import threading
 from connector.setting import server, port, botname, botnick
-from connector.setting import DEBUG
+from connector.setting import DEBUG, LOG_ENABLE
 from connector.ircmessage import IRCMessage
 from queue import Queue
 
@@ -65,5 +65,6 @@ class IRCConnector(threading.Thread):
                     if message.msgType == 'PING':
                         self.ping()
                     else:
-                        print(message)
+                        if LOG_ENABLE:
+                            print(message)
                         self.msgQueue.put({'type': 'irc', 'content': message})

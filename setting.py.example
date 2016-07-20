@@ -5,3 +5,4 @@ port = 6697
 botname = 'botname'
 botnick = 'botnick'
 DEBUG = False
+LOG_ENABLE = True
