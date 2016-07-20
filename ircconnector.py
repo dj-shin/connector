@@ -57,11 +57,10 @@ class IRCConnector(threading.Thread):
             except Exception as e:
                 print(e)
             else:
-                print(ircmsg)
                 message = IRCMessage(ircmsg)
                 if message.isValid():
-                    print(message)
                     if message.msgType == 'PING':
                         self.ping()
                     else:
+                        print(ircmsg)
                         self.msgQueue.put({'type': 'irc', 'content': message})
